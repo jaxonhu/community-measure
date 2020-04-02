@@ -7,7 +7,38 @@ NMI指标用来比较社区检测结果与真实结果的差异，取值区间�
 使用方法： 
 
 1. make （如编译不通过，修改makefile）
-2. ./nmiMeasure input_file1 input_file2
+2. ./nmiMeasure ../input/real_set ../input/test_set
+
+real_set为真实社区集合
+
+```
+#	community_id
+1	1
+2	1
+3	1
+4	1
+5	2
+6	2
+7	2
+8	2
+
+```
+
+test_set为测试集合
+
+```
+# 	community_id
+1	1
+3	1
+2	1
+4	1
+5	2
+7	2
+6	3
+8	3
+
+
+```
 
 
 #### modularity(模块度)
@@ -17,4 +48,8 @@ modularity用来比较网络中社区的划分情况，直观理解社区划分�
 使用方法：
 
 1. make
-2. ./modularity graph_file  community_file
+2. ./modularity ../input/graph_file  ../input/community_file
+
+graph_file的数据集为 https://snap.stanford.edu/data/facebook_combined.txt.gz
+
+community_file 为社区划分结果，输出格式与上方类似；
